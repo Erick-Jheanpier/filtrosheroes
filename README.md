@@ -8,6 +8,8 @@
 - Desarrollado en **CodeIgniter 4** y usa **Html2Pdf** para la exportación.  
 
 ---
+## 🔗 Ejecución en de la base de datos
+la base de datos esta en la carpeta raiz del proyecto llamado bdheroes, ejecutala para que puedas usar el proyecto
 
 ## 🔗 Ejecución en tu entorno local
 
