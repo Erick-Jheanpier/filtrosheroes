@@ -1,0 +1,146 @@
+ERROR - 2025-09-20 00:09:49 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: YES) in C:\laragon\www\filtrosheroes\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\laragon\www\filtrosheroes\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'superhero', 3306, '', 0)
+#1 C:\laragon\www\filtrosheroes\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\laragon\www\filtrosheroes\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\laragon\www\filtrosheroes\app\Controllers\SuperheroeController.php(18): CodeIgniter\Database\BaseConnection->query('\r\n            S...')
+#4 C:\laragon\www\filtrosheroes\system\CodeIgniter.php(933): App\Controllers\SuperheroeController->index()
+#5 C:\laragon\www\filtrosheroes\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SuperheroeController))
+#6 C:\laragon\www\filtrosheroes\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\filtrosheroes\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#8 C:\laragon\www\filtrosheroes\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 C:\laragon\www\filtrosheroes\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: YES) in C:\laragon\www\filtrosheroes\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\laragon\www\filtrosheroes\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\laragon\www\filtrosheroes\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\laragon\www\filtrosheroes\app\Controllers\SuperheroeController.php(18): CodeIgniter\Database\BaseConnection->query('\r\n            S...')
+#3 C:\laragon\www\filtrosheroes\system\CodeIgniter.php(933): App\Controllers\SuperheroeController->index()
+#4 C:\laragon\www\filtrosheroes\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SuperheroeController))
+#5 C:\laragon\www\filtrosheroes\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\laragon\www\filtrosheroes\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#7 C:\laragon\www\filtrosheroes\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#8 C:\laragon\www\filtrosheroes\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#9 {main}
+CRITICAL - 2025-09-20 00:09:49 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: YES)
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Controllers\SuperheroeController.php(18): CodeIgniter\Database\BaseConnection->query('
+            SELECT id, IFNULL(publisher_name, \'\') AS publisher_name 
+            FROM publisher
+        ')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SuperheroeController->index()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SuperheroeController))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-20 00:11:59 --> ErrorException: unlink(C:\laragon\www\filtrosheroes\writable\debugbar/debugbar_1758320857.711062.json): No such file or directory
+[Method: GET, Route: /]
+in SYSTEMPATH\Debug\Toolbar\Collectors\History.php on line 82.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(C:\\laragon\\www\\filtrosheroes\\writable\\debugbar/debugbar_1758320857.711062.json): No such file or directory', 'C:\\laragon\\www\\filtrosheroes\\system\\Debug\\Toolbar\\Collectors\\History.php', 82)
+ 2 SYSTEMPATH\Debug\Toolbar\Collectors\History.php(82): unlink('C:\\laragon\\www\\filtrosheroes\\writable\\debugbar/debugbar_1758320857.711062.json')
+ 3 SYSTEMPATH\Debug\Toolbar.php(517): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles('1758327054.845732', 20)
+ 4 SYSTEMPATH\Debug\Toolbar.php(496): CodeIgniter\Debug\Toolbar->format([...], 'html')
+ 5 APPPATH\Config\Events.php(47): CodeIgniter\Debug\Toolbar->respond()
+ 6 SYSTEMPATH\Events\Events.php(152): CodeIgniter\Events\Events::Config\{closure}()
+ 7 SYSTEMPATH\CodeIgniter.php(339): CodeIgniter\Events\Events::trigger('pre_system')
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-09-20 00:15:55 --> mysqli_sql_exception: PROCEDURE superhero.sp_get_superheroes_by_publisher does not exist in C:\laragon\www\filtrosheroes\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\laragon\www\filtrosheroes\system\Database\MySQLi\Connection.php(327): mysqli->query('CALL sp_get_sup...', 0)
+#1 C:\laragon\www\filtrosheroes\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('CALL sp_get_sup...')
+#2 C:\laragon\www\filtrosheroes\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('CALL sp_get_sup...')
+#3 C:\laragon\www\filtrosheroes\app\Controllers\SuperheroeController.php(52): CodeIgniter\Database\BaseConnection->query('CALL sp_get_sup...', Array)
+#4 C:\laragon\www\filtrosheroes\system\CodeIgniter.php(933): App\Controllers\SuperheroeController->exportPdf('7')
+#5 C:\laragon\www\filtrosheroes\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SuperheroeController))
+#6 C:\laragon\www\filtrosheroes\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\filtrosheroes\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#8 C:\laragon\www\filtrosheroes\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 C:\laragon\www\filtrosheroes\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 {main}
+CRITICAL - 2025-09-20 00:15:55 --> CodeIgniter\Database\Exceptions\DatabaseException: PROCEDURE superhero.sp_get_superheroes_by_publisher does not exist
+[Method: GET, Route: superheroes/exportPdf/7]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 APPPATH\Controllers\SuperheroeController.php(52): CodeIgniter\Database\BaseConnection->query('CALL sp_get_superheroes_by_publisher(?)', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SuperheroeController->exportPdf('7')
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SuperheroeController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-20 00:15:55 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: PROCEDURE superhero.sp_get_superheroes_by_publisher does not exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('CALL sp_get_superheroes_by_publisher(\'7\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('CALL sp_get_superheroes_by_publisher(\'7\')')
+ 3 APPPATH\Controllers\SuperheroeController.php(52): CodeIgniter\Database\BaseConnection->query('CALL sp_get_superheroes_by_publisher(?)', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SuperheroeController->exportPdf('7')
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SuperheroeController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-20 00:15:55 --> [Caused by] mysqli_sql_exception: PROCEDURE superhero.sp_get_superheroes_by_publisher does not exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('CALL sp_get_superheroes_by_publisher(\'7\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('CALL sp_get_superheroes_by_publisher(\'7\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('CALL sp_get_superheroes_by_publisher(\'7\')')
+ 4 APPPATH\Controllers\SuperheroeController.php(52): CodeIgniter\Database\BaseConnection->query('CALL sp_get_superheroes_by_publisher(?)', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SuperheroeController->exportPdf('7')
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SuperheroeController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-09-20 00:19:52 --> mysqli_sql_exception: Table 'superhero.superheroes' doesn't exist in C:\laragon\www\filtrosheroes\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\laragon\www\filtrosheroes\system\Database\MySQLi\Connection.php(327): mysqli->query('CALL sp_get_sup...', 0)
+#1 C:\laragon\www\filtrosheroes\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('CALL sp_get_sup...')
+#2 C:\laragon\www\filtrosheroes\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('CALL sp_get_sup...')
+#3 C:\laragon\www\filtrosheroes\app\Controllers\SuperheroeController.php(52): CodeIgniter\Database\BaseConnection->query('CALL sp_get_sup...', Array)
+#4 C:\laragon\www\filtrosheroes\system\CodeIgniter.php(933): App\Controllers\SuperheroeController->exportPdf('5')
+#5 C:\laragon\www\filtrosheroes\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SuperheroeController))
+#6 C:\laragon\www\filtrosheroes\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\filtrosheroes\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#8 C:\laragon\www\filtrosheroes\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 C:\laragon\www\filtrosheroes\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 {main}
+CRITICAL - 2025-09-20 00:19:52 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'superhero.superheroes' doesn't exist
+[Method: GET, Route: superheroes/exportPdf/5]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 APPPATH\Controllers\SuperheroeController.php(52): CodeIgniter\Database\BaseConnection->query('CALL sp_get_superheroes_by_publisher(?)', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SuperheroeController->exportPdf('5')
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SuperheroeController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-20 00:19:52 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'superhero.superheroes' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('CALL sp_get_superheroes_by_publisher(\'5\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('CALL sp_get_superheroes_by_publisher(\'5\')')
+ 3 APPPATH\Controllers\SuperheroeController.php(52): CodeIgniter\Database\BaseConnection->query('CALL sp_get_superheroes_by_publisher(?)', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SuperheroeController->exportPdf('5')
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SuperheroeController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-20 00:19:52 --> [Caused by] mysqli_sql_exception: Table 'superhero.superheroes' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('CALL sp_get_superheroes_by_publisher(\'5\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('CALL sp_get_superheroes_by_publisher(\'5\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('CALL sp_get_superheroes_by_publisher(\'5\')')
+ 4 APPPATH\Controllers\SuperheroeController.php(52): CodeIgniter\Database\BaseConnection->query('CALL sp_get_superheroes_by_publisher(?)', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SuperheroeController->exportPdf('5')
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SuperheroeController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
